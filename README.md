@@ -29,7 +29,7 @@ Your application will not run properly without a key. To generate it, run:
 ```
 
 ### 5. Create an alias for `sail`
-Optional: To avoid typing `./vendor/bin/sail` each time, you can shorten it to `sail` using the following:
+Optional: To avoid typing `./vendor/bin/sail` each time, you can shorten it to `sail` with:
 ```shell script
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 ```
