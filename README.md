@@ -4,6 +4,8 @@ TODO: An app that will help you improve your habits.
 ## Installation
 To get started, run the following commands in the root directory of the cloned local repository:
 
+You might want to clone repository using UNIX related command line. Powershell caused issues with file formatting.
+
 ### 1. Configure environment
 Copy example environment file. Adjust it to your requirements or leave it unmodified:
 ```shell script
