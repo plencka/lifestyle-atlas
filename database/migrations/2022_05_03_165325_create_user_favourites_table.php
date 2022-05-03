@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user_favourites', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('plan_id')->references('id')->on('plans');
+            $table->primary(['user_id', 'plan_id']);
             $table->timestamps();
         });
     }
