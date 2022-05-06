@@ -1,7 +1,7 @@
 # lifestyle-atlas
 TODO: An app that will help you improve your habits.
 
-## Installation
+## Basic Application Setup
 To get started, run the following commands in the root directory of the cloned local repository:
 
 You might want to clone repository using UNIX related command line. Powershell caused issues with file formatting.
@@ -34,4 +34,17 @@ Your application will not run properly without a key. To generate it, run:
 Optional: To avoid typing `./vendor/bin/sail` each time, you can shorten it to `sail` with:
 ```shell script
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+```
+
+## Frontend Setup
+### 1. Run installation
+After completing previous steps, you can proceed to install npm dependencies:
+```shell script
+sail npm install
+```
+
+### 2. Run development environment
+You should be able to generate assets used by the application:
+```shell script
+sail npm run dev
 ```
