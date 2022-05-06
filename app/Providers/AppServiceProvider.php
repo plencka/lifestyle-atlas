@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('partials.language_select', function ($view) {
+            $view->with('current_locale', app()->getLocale());
+            $view->with('locales', config('app.locales'));
+        });
     }
 }
