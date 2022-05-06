@@ -1,4 +1,5 @@
-return [
+
+<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +12,7 @@ return [
 |
 */
 
-'previous' => '&laquo; Poprzedni',
-'next' => 'Następny &raquo;',
-
+return [
+    'next'     => 'Następna &raquo;',
+    'previous' => '&laquo; Poprzednia',
 ];

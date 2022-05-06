@@ -62,11 +62,9 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('login.register') }}
-                                </button>
-                            </div>
+                            <button type="submit" class="btn btn-primary col-md-3 mx-auto">
+                                {{ __('login.register') }}
+                            </button>
                         </div>
                     </form>
                 </div>
