@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('category_id')->references('id')->on('categories');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

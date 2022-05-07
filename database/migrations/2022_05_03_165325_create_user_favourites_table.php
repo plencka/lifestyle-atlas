@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('plan_id')->references('id')->on('plans');
             $table->primary(['user_id', 'plan_id']);
+            $table->boolean('favoured')->default(1);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
