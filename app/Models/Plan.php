@@ -23,11 +23,11 @@ class Plan extends Model
 
     public function activities()
     {
-        return $this->belongsToMany(Activity::class);
+        return $this->belongsToMany(Activity::class, 'activity_plan');
     }
 
     public function usersWhoFavourited()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'user_favourites');
     }
 }

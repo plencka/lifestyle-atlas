@@ -13,6 +13,6 @@ class Activity extends Model
 
     public function plans()
     {
-        return $this->belongsToMany(Plan::class);
+        return $this->belongsToMany(Plan::class, 'activity_plan');
     }
 }
