@@ -10,6 +10,9 @@ class Activity extends Model
     use HasFactory;
     protected $table = 'activities';
     protected $primaryKey = 'id';
-    
-    
+
+    public function plans()
+    {
+        return $this->belongsToMany(Plan::class);
+    }
 }
