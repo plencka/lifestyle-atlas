@@ -6,3 +6,11 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Dividers
+hr.rounded {
+    border-radius: 5px;
+    border-top: 4px solid;
+    color: $primary;
+    opacity: 1.0;
+}
