@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'browse' => 'Przeglądaj plany',
+    'browse' => 'Przeglądaj',
     'type_search' => 'Wpisz frazę, by wyszukać...',
     'favourites_only' => 'Tylko ulubione',
     'owned_only' => "Tylko moje plany",

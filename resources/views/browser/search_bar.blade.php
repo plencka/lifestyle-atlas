@@ -2,7 +2,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-md-8 col-sm-0">
             <input id="search" type="text" class="form-control" name="search"
-                   placeholder="{{ __('browser.type_search') }}" autocomplete="name" autofocus>
+                   placeholder="{{ __('browser.type_search') }}" autofocus>
         </div>
         <div class="form-group col-md-4">
             <select id="category_select" name="category_select" class="form-control">
