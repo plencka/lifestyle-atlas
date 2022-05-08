@@ -1,6 +1,6 @@
 <div class="col-md-0 mt-4">
     <div class="card">
-        <div class="card-header bg-primary">{{ __('activity.activity') }}</div>
+        <div class="card-header bg-primary">{{ __('activity.activities') }}</div>
 
         <div class="card-body">
             @if (True) <!-- Has activities -->

@@ -5,7 +5,7 @@
         </div>
         <div class="form-group col-md-4">
                 <select id="category_select" name="category_select" class="form-control">
-                    <option value="None" selected>None</option>
+                    <option value="None" selected>{{ __('browser.no_category') }}</option>
                     <option value="((Category1))">((Category1))</option>
                     <option value="((Category2))">((Category2))</option>
                 </select>
