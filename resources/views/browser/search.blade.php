@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="container">
     <div class="row justify-content-center">
         @include('browser.search_bar')
         <div class="col-md-0">
@@ -22,7 +22,7 @@
             </ul>
         </div>
         <div class="spinner-border text-primary col-md-0" role="status">
-            <span class="visually-hidden">Loading...</span>
+            <span class="visually-hidden">{{ __('loading.loading') }}</span>
         </div>
     </div>
 </div>

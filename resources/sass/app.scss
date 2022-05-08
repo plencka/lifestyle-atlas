@@ -14,3 +14,12 @@ hr.rounded {
     color: $primary;
     opacity: 1.0;
 }
+
+// Cards
+.card-main {
+    @extend #{'.card', '.shadow-lg'};
+}
+
+.card-header-main {
+    @extend #{'.card-header', '.bg-primary'};
+}

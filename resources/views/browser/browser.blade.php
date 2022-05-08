@@ -4,13 +4,19 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-0">
-                <div class="card shadow-lg">
-                    <div class="card-header bg-primary">{{ __('browser.browse') }}</div>
+                <div class="card-main">
+                    <div class="card-header-main">{{ __('browser.browse') }}</div>
 
                     <div class="card-body">
-                        <div class="row justify-content-center">
-                            @include('browser.search')
-                            @include('partials.plan')
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    @include('browser.search')
+                                </div>
+                                <div class="col-md-6">
+                                    @include('partials.plan')
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
