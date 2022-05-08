@@ -1,0 +1,29 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Dividers
+hr.rounded {
+    border-radius: 5px;
+    border-top: 4px solid;
+    color: $primary;
+    opacity: 1.0;
+}
+
+// Cards
+.card-main {
+    @extend #{'.card', '.shadow-lg'};
+}
+
+.card-header-main {
+    @extend #{'.card-header', '.bg-primary', '.text-white', '.fw-bold'};
+}
+
+.card-header-sub {
+    @extend #{'.card-header', '.bg-primary', '.text-white'};
+}
