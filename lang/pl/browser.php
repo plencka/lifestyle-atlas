@@ -4,7 +4,9 @@ return [
     'browse' => 'Przeglądaj plany',
     'type_search' => 'Wpisz frazę, by wyszukać...',
     'favourites_only' => 'Tylko ulubione',
-    'plan' => 'Plan',
-    'made_by' => 'Stworzone przez',
+    'owned_only' => "Tylko moje plany",
     'no_category' => 'Bez kategorii',
+    'no_plans_found' => "Nie znaleziono planów :(",
+    'favourited' => "Ulubiony ❤",
+    'author' => "Autor",
 ];

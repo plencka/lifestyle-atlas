@@ -21,5 +21,9 @@ hr.rounded {
 }
 
 .card-header-main {
-    @extend #{'.card-header', '.bg-primary'};
+    @extend #{'.card-header', '.bg-primary', '.text-white', '.fw-bold'};
+}
+
+.card-header-sub {
+    @extend #{'.card-header', '.bg-primary', '.text-white'};
 }
