@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\CreatePlanController;
+use App\Http\Controllers\BrowserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +22,12 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/browse', function () {
-    return view('browser.browser');
-});
+Route::get('/', [PageController::class, 'index']);
+Route::get('/create', [CreatePlanController::class, 'create']);
+Route::get('/browse', [BrowserController::class, 'index']);
+    
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/create', [App\Http\Controllers\CreatePlanController::class, 'index'])->name('create');
