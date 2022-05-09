@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+
+use App\Models\Plan;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +17,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(ActivitySeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(RoleSeeder::class);
+        User::factory(10)->create();
+        Plan::factory(10)->create();
+
+        for ($i = 0; $i < 10; $i++) {
+            $this->call(ActivityPlanSeeder::class);
+        }
+
     }
 }
