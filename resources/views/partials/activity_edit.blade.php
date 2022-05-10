@@ -10,8 +10,9 @@
                         <ul class="list-group">
                             <!-- Foreach activity -->
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span>((Activity 1))
-                                <span class="badge bg-primary">20 minutes</span>
+                                @foreach ($activity_plan in $activity_plan)
+                                <span>jknk
+                                <span class="badge bg-primary"></span>
                                 </span>
                                 <button type="submit" class="btn btn-danger text-white">
                                     {{ __('plan.delete') }}

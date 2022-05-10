@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\CreatePlanController;
 use App\Http\Controllers\BrowserController;
 
 /*
@@ -22,8 +21,9 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-Route::get('/', [PageController::class, 'index']);
-Route::get('/create', [CreatePlanController::class, 'create']);
+Route::get('/', [PageController::class, 'index'])->name('plan.index');
+Route::get('/create', [PageController::class, 'create'])->name('plan.create');
+Route::post('/', [PageController::class, 'store'])->name('plan.store');
 Route::get('/browse', [BrowserController::class, 'index']);
     
 

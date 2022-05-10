@@ -52,7 +52,7 @@
                     @if (Auth::check())
                         <!-- Create Link -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/create') }}">{{ __('plan.create') }}</a>
+                            <a class="nav-link" href="{{route('plan.create')}}">{{ __('plan.create') }}</a>
                         </li>
                     @endif
                     <!-- Browser Link -->
