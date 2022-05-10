@@ -23,6 +23,10 @@ class ProfanityFilter
             'msg' => $text,
         ]);
 
+        if ($response->failed())
+        {
+            return $text;
+        }
         return $response['clean'];
     }
 }
