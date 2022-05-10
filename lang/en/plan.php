@@ -14,4 +14,5 @@ return [
     'share' => 'Share',
     'clipboard' => 'Copied',
     'copied_to_clipboard' => 'Copied Plan Link to Clipboard!',
+    'select_plan' => "Select valid plan to display its contents.",
 ];
