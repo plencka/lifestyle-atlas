@@ -126,6 +126,13 @@
     <main class="py-4">
         @yield('content')
     </main>
+
+    <footer class="bg-light shadow-lg text-center text-lg-start fixed-bottom">
+        <div class="text-center p-3">
+            Links:
+            <a class="text-dark" href="https://github.com/plencka/lifestyle-atlas">GitHub</a>
+        </div>
+    </footer>
 </div>
 </body>
 </html>
