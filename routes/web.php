@@ -32,3 +32,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/create', [App\Http\Controllers\CreatePlanController::class, 'index'])->name('create');
+
+Route::get('/plan/{plan_id}', [App\Http\Controllers\PlanController::class, 'show']);

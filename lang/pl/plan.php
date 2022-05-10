@@ -14,4 +14,5 @@ return [
     'share' => 'Udostępnij',
     'clipboard' => 'Skopiowano',
     'copied_to_clipboard' => 'Skopiowano link do planu do systemowego schowka!',
+    'select_plan' => "Wybierz prawidłowy plan, by wyświetlić jego zawartość.",
 ];

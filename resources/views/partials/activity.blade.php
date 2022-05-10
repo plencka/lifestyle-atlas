@@ -3,16 +3,16 @@
         <div class="card-header-sub">{{ __('activity.activities') }}</div>
 
         <div class="card-body">
-            @if (True)
-                <!-- Has activities -->
+            @if (!$selected_plan->activities->isEmpty())
                 <div>
                     <div>
                         <ul class="list-group">
-                            <!-- Foreach activity -->
+                            @foreach($selected_plan->activities as $activity)
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                ((Activity 1))
-                                <span class="badge bg-primary">20 minutes</span>
+                                {{ $activity->description }}
+                                <span class="badge bg-primary">{{ $activity->duration }} minutes</span>
                             </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
