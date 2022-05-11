@@ -1,4 +1,4 @@
-bootstrap = require('bootstrap');
+ bootstrap = require('bootstrap');
 
 function copySuccess() {
     let toast = document.getElementById('clipToast');

@@ -2,20 +2,22 @@
     <div class="card-header-main">{{ __('plan.plan') }}</div>
 
     <div class="card-body">
-        @if (True)
-            <!-- Has plan data -->
-            <div>
+        <div>
+            <form action={{route('plan.store')}} method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="container">
                     <div class="row mb-0 align-content-center mt-3 text-start">
                         <div class="col-8">
-                            <input id="plan_name" type="text" class="form-control" name="plan_name"
+                            <input id="plan_name" type="text" class="form-control" name="planName"
                                    placeholder="{{ __('plan.type_name') }}" autofocus>
                         </div>
                         <div class="form-group col-4">
-                            <select id="category_select" name="category_select" class="form-control">
-                                <option value="None" selected>{{ __('browser.no_category') }}</option>
-                                <option value="((Category1))">((Category1))</option>
-                                <option value="((Category2))">((Category2))</option>
+                            <select id="category_select" name="category" class="form-control">
+                                <option value=""> {{ __('browser.select_category') }}</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{$category->id}}" ?'selected=selected': ''>
+                                    {{ __($category->name) }} </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -24,47 +26,20 @@
 
                 @include('partials.activity_edit')
 
-                <div class="container">
-                    <div class="row mb-0 justify-content-evenly text-center py-2">
-                        <div class="form-group col-md-5 col-sm-0 px-0">
-                            <select id="category_select" name="category_select" class="form-control">
-                                <option value="((Activity1)) selected">((Super activity 1))</option>
-                                <option value="((Activity2))">((Super activity 2))</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4 col-sm-8 px-0">
-                            <select id="category_select" name="category_select" class="form-control">
-                                <option value="5" selected>5 minutes</option>
-                                <option value="10">10 minutes</option>
-                                <option value="15">15 minutes</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-success text-white col-2 px-0">
-                            {{ __('plan.add') }}
-                        </button>
-                    </div>
-                </div>
                 <div class="row mb-0 align-content-end mt-3 text-end">
                     <div class="col-md-0 mt-5">
-                        <!-- Plan exists -->
-                        <button type="submit" class="btn btn-danger text-white">
-                            {{ __('plan.delete') }}
-                        </button>
+                        <a href="{{url('/browse')}}">
+                            <input type="button" class="btn btn-secondary text-white" value="{{ __('plan.discard') }}"/>
+                        </a>
 
-                        <button type="submit" class="btn btn-secondary text-white">
-                            {{ __('plan.discard') }}
-                        </button>
-
-                        <!-- Can save -->
-                        <button type="submit" class="btn btn-success text-white">
-                            {{ __('plan.save') }}
-                        </button>
+                        <a href="{{route('plan.store')}}">
+                            <button type="submit" class="btn btn-success text-white">
+                                {{ __('plan.save') }}
+                            </button>
+                        </a>
                     </div>
                 </div>
-            </div>
-        @else
-            {{ __('plan.select_plan') }}
-        @endif
-
+            </form>
+        </div>
     </div>
 </div>

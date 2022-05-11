@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 
 class ViewServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -22,6 +23,8 @@ class ViewServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrap();
+
         View::composer('partials.language_select', function ($view) {
             $view->with('current_locale', app()->getLocale());
             $view->with('locales', config('app.locales'));

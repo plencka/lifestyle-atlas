@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlanController;
+use App\Http\Controllers\BrowserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,14 +25,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/browse', function () {
-    return view('browser.browser');
-});
+Route::get('/plan/{plan_id}', [PlanController::class, 'index'])->name('plan.index');
+Route::get('/plan/{plan_id}/{name}', [PlanController::class, 'show'])->name('plan.show');
+Route::get('/delete/{plan_id}', [PlanController::class, 'delete'])->name('plan.delete');
+Route::get('/favourite/{plan_id}', [PlanController::class, 'favourite'])->name('plan.favourite');
+Route::get('/unfavourite/{plan_id}', [PlanController::class, 'unfavourite'])->name('plan.unfavourite');
+Route::get('/create', [PlanController::class, 'create'])->name('plan.create');
+Route::post('/', [PlanController::class, 'store'])->name('plan.store');
+Route::get('/browse', [BrowserController::class, 'index'])->name('browse.index');
 
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/create', [App\Http\Controllers\CreatePlanController::class, 'index'])->name('create');
-
-Route::get('/plan/{plan_id}', [App\Http\Controllers\PlanController::class, 'show']);

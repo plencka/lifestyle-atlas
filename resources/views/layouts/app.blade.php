@@ -52,7 +52,7 @@
                     @if (Auth::check())
                         <!-- Create Link -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/create') }}">{{ __('plan.create') }}</a>
+                            <a class="nav-link" href="{{route('plan.create')}}">{{ __('plan.create') }}</a>
                         </li>
                     @endif
                     <!-- Browser Link -->
@@ -99,6 +99,16 @@
 
     <div class="container">
         <div class="row justify-content-center">
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show col-md-8 mt-2">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             @if (Session::has('success-message'))
                 <div class="alert alert-success alert-dismissible fade show col-md-8 mt-2" role="alert">
                     {{ __(Session::get('success-message')) }}

@@ -15,4 +15,12 @@ return [
     'clipboard' => 'Copied',
     'copied_to_clipboard' => 'Copied Plan Link to Clipboard!',
     'select_plan' => "Select valid plan to display its contents.",
+    'type_name' => "Type name of plan...",
+    'delete_success' => "Your plan has been deleted.",
+    'create_success' => "Your plan has been created..",
+    'cannot_delete' => "You can't delete this plan.",
+    'favourite_success' => "You have favourited this plan!",
+    'cannot_favourite' => "Couldn't favourite this plan.",
+    'unfavourite_success' => "You have unfavourited this plan.",
+    'cannot_unfavourite' => "Couldn't unfavourite this plan.",
 ];

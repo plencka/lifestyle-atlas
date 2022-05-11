@@ -7,11 +7,11 @@
                 <div>
                     <div>
                         <ul class="list-group">
-                            @foreach($selected_plan->activities as $activity)
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                {{ $activity->description }}
-                                <span class="badge bg-primary">{{ $activity->duration }} minutes</span>
-                            </li>
+                            @foreach($activities as $activity)
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    {{ __($activity[0])}}
+                                    <span class="badge bg-primary">{{__("activity.minutes")}} {{$activity[1]}}</span>
+                                </li>
                             @endforeach
                         </ul>
                     </div>

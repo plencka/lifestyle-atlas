@@ -1,27 +1,33 @@
-<div class="card-main">
+<div class="card-main mb-5">
     <div class="card-header-main">{{ __('browser.browse') }}</div>
-
     <div class="card-body">
         @include('browser.search_bar')
-        @if (True)
-            <!-- Is Loaded -->
+        @if (isset($plans))
             <div class="col-md-0">
-                @if (True)
-                    <!-- Has Plans -->
+                @if (!$plans->isEmpty())
                     <ul class="list-group mt-2">
-                        <!-- Foreach queried plan -->
-                        <li class="list-group-item mb-2 shadow-sm">
-                            <a href="#">
-                                <div>
-                                    <h5 class="mt-1">((My awesome super plan))
-                                        <span class="badge bg-primary mt-1">((Category))</span>
-                                        <span class="badge bg-primary mt-1">{{ __('browser.favourited') }}</span>
-                                    </h5>
-                                </div>
-                                <hr class="rounded mt-2 mb-2">
-                                {{ __('browser.author') }}: ((Author))
+                        @foreach ($plans as $plan)
+                            <a href="{{url('plan', $plan->id)}}" class="text-decoration-none">
+                                <li class="list-group-item mb-2 shadow-sm h-100 w-100">
+                                        <div>
+                                            <h5 class="mt-1 fw-bold text-primary">{{$plan->name}}
+                                                <span class="badge mt-1"
+                                                      style="background-color: {{ '#'.$plan->category->color_hex }};">
+                                                {{__($plan->category->name)}}
+                                                </span>
+                                                @if (!Auth::guest() and $plan->usersWhoFavourited->contains('id', Auth::user()->id))
+                                                    <span
+                                                        class="badge bg-primary mt-1">{{ __('browser.favourited') }}
+                                                    </span>
+                                                @endif
+                                            </h5>
+                                        </div>
+                                        <hr class="rounded mt-2 mb-2">
+                                        {{ __('browser.author') }}: {{$plan->user->name}}
+                                </li>
                             </a>
-                        </li>
+                        @endforeach
+                            {!! $plans->appends(Request::except('page'))->render() !!}
                     </ul>
                 @else
                     {{ __('browser.no_plans_found') }}

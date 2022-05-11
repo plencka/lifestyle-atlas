@@ -9,4 +9,5 @@ return [
     'no_plans_found' => "No plans found :(",
     'favourited' => "Favourited ❤",
     'author' => "Author",
+    'select_category' => "Select category",
 ];
