@@ -37,9 +37,6 @@
                                             {{ __('plan.delete') }}
                                         </button>
                                     </a>
-                                    <button type="submit" class="btn btn-secondary">
-                                        {{ __('plan.edit') }}
-                                    </button>
                                 @endif
 
                                 @if (!$selected_plan->usersWhoFavourited->contains('id', Auth::user()->id))
