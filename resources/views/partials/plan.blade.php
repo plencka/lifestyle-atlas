@@ -4,13 +4,10 @@
     <div class="card-body">
         @if (isset($selected_plan))
             <div>
-                <style>
-                    .plan-category-bg-{{ $selected_plan->id }} {
-                        background-color: {{ '#'.$selected_plan->category->color_hex }};
-                    }
-                </style>
-                <h4>{{ $selected_plan->name }} <span
-                        class="badge plan-category-bg-{{ $selected_plan->id }}">{{ $selected_plan->category->name }}</span>
+                <h4>{{ $selected_plan->name }}
+                    <span class="badge" style="background-color: {{ '#'.$selected_plan->category->color_hex }};">
+                        {{ $selected_plan->category->name }}
+                    </span>
                 </h4>
                 <hr class="rounded mt-2 mb-2">
                 <div>
