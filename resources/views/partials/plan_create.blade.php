@@ -6,7 +6,7 @@
             <form action={{route('plan.store')}} method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="container">
-                    <div class="row mb-0 align-content-center mt-3 text-start">
+                    <div class="row mb-0 align-content-center text-start">
                         <div class="col-8">
                             <input id="plan_name" type="text" class="form-control" name="planName"
                                    placeholder="{{ __('plan.type_name') }}" autofocus>
@@ -25,19 +25,16 @@
                 <hr class="rounded mt-2 mb-2">
 
                 @include('partials.activity_edit')
+                <div class="col-md-0 mt-2 mb-5 text-end">
+                    <a href="{{url('/browse')}}">
+                        <input type="button" class="btn btn-secondary text-white" value="{{ __('plan.discard') }}"/>
+                    </a>
 
-                <div class="row mb-0 align-content-end mt-3 text-end">
-                    <div class="col-md-0 mt-5">
-                        <a href="{{url('/browse')}}">
-                            <input type="button" class="btn btn-secondary text-white" value="{{ __('plan.discard') }}"/>
-                        </a>
-
-                        <a href="{{route('plan.store')}}">
-                            <button type="submit" class="btn btn-success text-white">
-                                {{ __('plan.save') }}
-                            </button>
-                        </a>
-                    </div>
+                    <a href="{{route('plan.store')}}">
+                        <button type="submit" class="btn btn-success text-white">
+                            {{ __('plan.save') }}
+                        </button>
+                    </a>
                 </div>
             </form>
         </div>
