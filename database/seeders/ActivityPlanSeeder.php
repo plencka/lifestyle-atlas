@@ -20,6 +20,7 @@ class ActivityPlanSeeder extends Seeder
             DB::table('activity_plan')->insert([
                 'activity_id' => Activity::all()->pluck('id')->random(),
                 'plan_id' => Plan::all()->pluck('id')->random(),
+                'duration' => (5 * rand(1, 12)),
             ]);
 
     }
