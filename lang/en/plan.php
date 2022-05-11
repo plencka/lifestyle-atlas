@@ -15,4 +15,5 @@ return [
     'clipboard' => 'Copied',
     'copied_to_clipboard' => 'Copied Plan Link to Clipboard!',
     'select_plan' => "Select valid plan to display its contents.",
+    'type_name' => "Type name of plan...",
 ];

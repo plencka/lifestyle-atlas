@@ -2,9 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\BrowserController;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\BrowserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +21,18 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-Route::get('/', [PageController::class, 'index'])->name('plan.index');
-Route::get('/create', [PageController::class, 'create'])->name('plan.create');
-Route::post('/', [PageController::class, 'store'])->name('plan.store');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/plan/{plan_id}', [PlanController::class, 'index'])->name('plan.index');
+Route::get('/plan/{plan_id}/{name}', [PlanController::class, 'show'])->name('plan.show');
+Route::get('/delete/{plan_id}', [PlanController::class, 'delete'])->name('plan.delete');
+Route::get('/favourite/{plan_id}', [PlanController::class, 'favourite'])->name('plan.favourite');
+Route::get('/unfavourite/{plan_id}', [PlanController::class, 'unfavourite'])->name('plan.unfavourite');
+Route::get('/create', [PlanController::class, 'create'])->name('plan.create');
+Route::post('/', [PlanController::class, 'store'])->name('plan.store');
 Route::get('/browse', [BrowserController::class, 'index']);
-Route::get('/plan/{plan_id}', [PlanController::class, 'show']);
 
 Auth::routes();
 

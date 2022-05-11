@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Plan extends Model
 {
@@ -16,6 +17,17 @@ class Plan extends Model
         'user_id',
         'category_id',
     ];
+
+    public function getSlug()
+    {
+        $slug = Str::slug($this->name, '-');
+
+        if($slug === ""){
+            $slug = "noname";
+        }
+
+        return $slug;
+    }
 
     public function user()
     {
