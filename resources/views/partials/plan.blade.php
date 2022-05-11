@@ -6,7 +6,7 @@
             <div>
                 <h4>{{ $selected_plan->name }}
                     <span class="badge" style="background-color: {{ '#'.$selected_plan->category->color_hex }};">
-                        {{ $selected_plan->category->name }}
+                        {{ __($selected_plan->category->name) }}
                     </span>
                 </h4>
                 <hr class="rounded mt-2 mb-2">

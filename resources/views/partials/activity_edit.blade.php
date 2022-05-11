@@ -12,17 +12,17 @@
                                     <div class="row mb-0 justify-content-evenly text-center py-2">
                                         <div class="form-group col-md-5 col-sm-0 px-0">
                                             <select id="category_select" name="activity[{{$i}}]" class="form-control">
-                                                <option> {{ __('activity.select_activity') }} </option>
+                                                <option value=""> {{ __('activity.select_activity') }} </option>
                                                 @foreach ($activities as $activity)
                                                     <option value="{{$activity->id}}" ?'selected=selected': ''>
-                                                    {{$activity->name}} </option>
+                                                    {{ __($activity->name )}} </option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4 col-sm-8 px-0">
-                                            <input type="number" placeholder="Time in minutes" id="category_select"
+                                            <input value="0" type="number" placeholder="{{ __('activity.duration') }}" id="category_select"
                                                    name="duration[{{$i}}]" class="form-control">
-                                            </select>
+                                            </input>
                                         </div>
                                     </div>
                                 @endfor

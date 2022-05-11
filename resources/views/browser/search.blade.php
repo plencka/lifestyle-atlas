@@ -13,7 +13,7 @@
                                             <h5 class="mt-1 fw-bold text-primary">{{$plan->name}}
                                                 <span class="badge mt-1"
                                                       style="background-color: {{ '#'.$plan->category->color_hex }};">
-                                                {{$plan->category->name}}
+                                                {{__($plan->category->name)}}
                                                 </span>
                                                 @if (!Auth::guest() and $plan->usersWhoFavourited->contains('id', Auth::user()->id))
                                                     <span

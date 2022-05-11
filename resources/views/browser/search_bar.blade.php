@@ -9,7 +9,7 @@
                 <option value=""> {{ __('browser.select_category') }} </option>
                 @foreach ($categories as $category)
                     <option value="{{$category->id}}" @if($filter->category == $category->id) selected @endif >
-                        {{$category->name}} </option>
+                        {{ __($category->name) }} </option>
                 @endforeach
             </select>
         </div>

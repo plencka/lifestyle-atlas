@@ -9,6 +9,7 @@ use App\Models\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class PlanController extends Controller
 {
@@ -65,16 +66,20 @@ class PlanController extends Controller
         $plan->save();
 
         for($i = 0; $i < 5; $i++){
+            if(!$request->duration[$i] > 0){
+                continue;
+            }
+            if(!isset($request->activity[$i])){
+                continue;
+            }
             $activity_plan = new Activity_Plan();
             $activity_plan -> plan_id = $plan-> id;
-            $activity_plan -> activity_id= $request->activity[$i];
-            $activity_plan -> duration= $request->duration[$i];
+            $activity_plan -> activity_id = $request->activity[$i];
+            $activity_plan -> duration = $request->duration[$i];
             $activity_plan ->save();
         }
 
-        return redirect(route('plan.index', $plan->id))
-            ->with('success-message', 'plan.create_success')
-            ->with('plan_id', $plan->id);
+        return Redirect::route('plan.index', $plan->id);
 
     }
 

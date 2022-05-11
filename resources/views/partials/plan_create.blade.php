@@ -13,10 +13,10 @@
                         </div>
                         <div class="form-group col-4">
                             <select id="category_select" name="category" class="form-control">
-                                <option value=""> Select category</option>
+                                <option value=""> {{ __('browser.select_category') }}</option>
                                 @foreach ($categories as $category)
                                     <option value="{{$category->id}}" ?'selected=selected': ''>
-                                    {{$category->name}} </option>
+                                    {{ __($category->name) }} </option>
                                 @endforeach
                             </select>
                         </div>

@@ -9,8 +9,8 @@
                         <ul class="list-group">
                             @foreach($activities as $activity)
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    {{$activity[0]}}
-                                    <span class="badge bg-primary">{{$activity[1]}} minutes</span>
+                                    {{ __($activity[0])}}
+                                    <span class="badge bg-primary">{{__("activity.minutes")}} {{$activity[1]}}</span>
                                 </li>
                             @endforeach
                         </ul>

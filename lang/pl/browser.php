@@ -9,4 +9,5 @@ return [
     'no_plans_found' => "Nie znaleziono planów :(",
     'favourited' => "Ulubiony ❤",
     'author' => "Autor",
+    'select_category' => "Wybierz kategorię",
 ];
