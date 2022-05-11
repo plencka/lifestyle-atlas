@@ -15,12 +15,12 @@ class ActivityPlanSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run($id)
     {
-            DB::table('activity_plan')->insert([
-                'activity_id' => Activity::all()->pluck('id')->random(),
-                'plan_id' => Plan::all()->pluck('id')->random(),
-            ]);
-
+        DB::table('activity_plan')->insert([
+            'activity_id' => Activity::all()->pluck('id')->random(),
+            'plan_id' => $id,
+            'duration' => (5 * rand(1, 12)),
+        ]);
     }
 }
