@@ -15,10 +15,14 @@
                         <h3>{{ __('welcome.body') }}</h3>
                     </div>
                     <div class="col-md-0 mt-3">
-                        <button type="button"
-                                class="btn btn-primary text-white fw-bold shadow-lg">{{ __('welcome.browse') }}</button>
-                        <button type="button"
-                                class="btn btn-outline-primary fw-bold bg-light shadow-lg">{{ __('welcome.create') }}</button>
+                        <a href="{{ url('/browse') }}">
+                            <button type="button"
+                                    class="btn btn-primary text-white fw-bold shadow-lg">{{ __('welcome.browse') }}</button>
+                        </a>
+                        <a href="{{ url('/create') }}">
+                            <button type="button"
+                                    class="btn btn-outline-primary fw-bold bg-light shadow-lg">{{ __('welcome.create') }}</button>
+                        </a>
                     </div>
                 </div>
             </div>
