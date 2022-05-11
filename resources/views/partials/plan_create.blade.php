@@ -28,26 +28,8 @@
 
                 @include('partials.activity_edit')
 
-                <div class="container">
-                    <div class="row mb-0 justify-content-evenly text-center py-2">
-                        <div class="form-group col-md-5 col-sm-0 px-0">
-                            <select id="category_select" name="category_select" class="form-control">
-                                @foreach ($activities as $Activity)
-                                    <option name="ActivityName">{{$Activity->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4 col-sm-8 px-0">
-                            <select id="category_select" name="category_select" class="form-control">
-                                <option value="5" selected>5 minutes</option>
-                                <option value="10">10 minutes</option>
-                                <option value="15">15 minutes</option>
-                            </select>
-                        </div>
+                
                         
-                        <button type="submit" class="btn btn-success text-white col-2 px-0">
-                            {{ __('plan.add') }}
-                        </button>
                         
                     </div>
                 </div>

@@ -24,7 +24,7 @@ Route::get('language/{locale}', function ($locale) {
 Route::get('/', [PageController::class, 'index'])->name('plan.index');
 Route::get('/create', [PageController::class, 'create'])->name('plan.create');
 Route::post('/', [PageController::class, 'store'])->name('plan.store');
-Route::get('/browse', [BrowserController::class, 'index']);
+Route::get('/browse', [BrowserController::class, 'index'])->name('browse.index');
     
 
 Auth::routes();

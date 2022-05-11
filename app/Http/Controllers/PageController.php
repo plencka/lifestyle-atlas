@@ -29,6 +29,7 @@ class PageController extends Controller
         
     }
     public function store(Request $request){
+
         $request->validate([
             'PlanName' => 'required',
             'category' => 'required',
@@ -39,6 +40,16 @@ class PageController extends Controller
             $plan -> name = $request->input('PlanName');
             $plan -> category_id= $request->input('category');
             $plan -> save();
+
+
+            for($i = 0; $i < 5; $i++){
+                $activity_plan = new Activity_Plan();
+                $activity_plan -> plan_id = $plan-> id;
+                $activity_plan -> activity_id= $request->activity[$i];
+                $activity_plan -> duration= $request->duration[$i];
+                $activity_plan ->save();
+            }
+            
             return redirect(route('plan.index'))
                 ->with('message', 'Your Plan has been created');
         

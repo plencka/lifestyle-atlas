@@ -13,10 +13,31 @@ class BrowserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if($request->has('search') || $request->has('category')){
+            $search = $request->has('search') ? $request->search : '';
+
+            $plans = Plan::where('name', 'LIKE', '%'.$search.'%')
+                ->where('category_id', $request->category)
+                ->orderBy('name')
+                ->get();
+        }
+        else
+            $plans = Plan::orderBy('name')->get();
+
+        $categories = Category::all();
+
+        $filter = new \stdClass;
+        $filter->category = $request->category;
+        $filter->search = $request->search;
+
         return view('browser.browser')
-            ->with('plans', Plan::orderBy('name')->get());
+            ->with([
+                'plans' => $plans, 
+                'categories' => $categories,
+                'filter' => $filter
+            ]);
     }
 
     /**
@@ -55,7 +76,7 @@ class BrowserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
