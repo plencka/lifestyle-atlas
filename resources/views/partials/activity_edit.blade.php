@@ -10,10 +10,11 @@
                         <ul class="list-group">
                             <!-- Foreach activity -->
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span>((Activity 1))
-                                <span class="badge bg-primary">20 minutes</span>
+                              
+                                <span>jknk
+                                <span class="badge bg-primary"></span>
                                 </span>
-                                <button type="submit" class="btn btn-danger text-white">
+                                <button type="button" class="btn btn-danger text-white">
                                     {{ __('plan.delete') }}
                                 </button>
                             </li>
