@@ -38,8 +38,8 @@
                     <!-- Language Links -->
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ __('language.language') }}
+                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ __('language.language') }} - {{ __('language.name') }}
                         </a>
 
                         @include('partials/language_select')
