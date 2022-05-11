@@ -27,3 +27,17 @@ hr.rounded {
 .card-header-sub {
     @extend #{'.card-header', '.bg-primary', '.text-white'};
 }
+
+// Background images
+.backdrop-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position:absolute;
+    z-index:-1;
+}
