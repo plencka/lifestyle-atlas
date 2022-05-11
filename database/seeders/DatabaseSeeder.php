@@ -22,9 +22,12 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         User::factory(10)->create();
         Plan::factory(10)->create();
+        $plans = Plan::all();
 
-        for ($i = 0; $i < 10; $i++) {
-            $this->call(ActivityPlanSeeder::class);
+        foreach ($plans as $plan) {
+            for ($i = 0; $i <= rand(1,5); $i++) {
+                $this->call(ActivityPlanSeeder::class, false, ['id' => $plan['id']]);
+            }
         }
 
     }
