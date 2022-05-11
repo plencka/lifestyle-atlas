@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Activity_Plan;
 use App\Models\Category;
 use App\Models\Plan;
 use Illuminate\Http\Request;
@@ -14,7 +15,17 @@ class PlanController extends Controller
     public function show($plan_id, $name)
     {
         $selected_plan = Plan::query()->find($plan_id);
-        return view('plan', compact('selected_plan'));
+        $activities_entries = $selected_plan->activities;
+        $activity_plan = Activity_Plan::where('plan_id', $plan_id)->get();
+        $activities = [];
+        for ($i = 0; $i <= $activities_entries->count()-1; $i++) {
+            array_push($activities,
+                [
+                    $selected_plan->activities[$i]->name,
+                    $activity_plan[$i]->duration
+                ]);
+        }
+        return view('plan', compact('selected_plan', 'activities'));
     }
 
     public function index($plan_id)
@@ -52,6 +63,14 @@ class PlanController extends Controller
         $plan->name = $request->input('planName');
         $plan->category_id = $request->input('category');
         $plan->save();
+
+        for($i = 0; $i < 5; $i++){
+            $activity_plan = new Activity_Plan();
+            $activity_plan -> plan_id = $plan-> id;
+            $activity_plan -> activity_id= $request->activity[$i];
+            $activity_plan -> duration= $request->duration[$i];
+            $activity_plan ->save();
+        }
 
         return redirect(route('plan.index', $plan->id))
             ->with('success-message', 'plan.create_success')

@@ -37,9 +37,6 @@
                                             {{ __('plan.delete') }}
                                         </button>
                                     </a>
-                                    <button type="submit" class="btn btn-secondary">
-                                        {{ __('plan.edit') }}
-                                    </button>
                                 @endif
 
                                 @if (!$selected_plan->usersWhoFavourited->contains('id', Auth::user()->id))
@@ -64,7 +61,8 @@
             {{ __('plan.select_plan') }}
         @endif
 
-        <div class="toast position-absolute" style="right:0;" id="clipToast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast position-absolute" style="right:0;" id="clipToast" role="alert" aria-live="assertive"
+             aria-atomic="true">
             <div class="toast-header">
                 <strong class="me-auto">{{ __('plan.clipboard') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
