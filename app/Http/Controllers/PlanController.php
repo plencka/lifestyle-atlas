@@ -6,6 +6,7 @@ use App\Models\Activity;
 use App\Models\Activity_Plan;
 use App\Models\Category;
 use App\Models\Plan;
+use App\Services\ProfanityFilter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -61,7 +62,8 @@ class PlanController extends Controller
 
         $plan = new Plan();
         $plan->user_id = auth()->user()->id;
-        $plan->name = $request->input('planName');
+        $profanityFilter = new ProfanityFilter();
+        $plan->name = $profanityFilter->getFilteredText($request->input('planName'));
         $plan->category_id = $request->input('category');
         $plan->save();
 

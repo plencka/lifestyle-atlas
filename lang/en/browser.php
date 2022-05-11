@@ -10,4 +10,5 @@ return [
     'favourited' => "Favourited ❤",
     'author' => "Author",
     'select_category' => "Select category",
+    'search' => "Search",
 ];

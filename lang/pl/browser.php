@@ -10,4 +10,5 @@ return [
     'favourited' => "Ulubiony ❤",
     'author' => "Autor",
     'select_category' => "Wybierz kategorię",
+    'search' => "Wyszukaj",
 ];
