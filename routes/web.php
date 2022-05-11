@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\CreatePlanController;
 use App\Http\Controllers\BrowserController;
+use App\Http\Controllers\PlanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,8 @@ Route::get('language/{locale}', function ($locale) {
 Route::get('/', [PageController::class, 'index']);
 Route::get('/create', [CreatePlanController::class, 'create']);
 Route::get('/browse', [BrowserController::class, 'index']);
-    
+Route::get('/plan/{plan_id}', [PlanController::class, 'show']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-100">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,8 +19,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-<div id="app">
+<body class="h-100">
+<div id="app" class="h-100">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -38,8 +38,8 @@
                     <!-- Language Links -->
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ __('language.language') }}
+                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ __('language.language') }} - {{ __('language.name') }}
                         </a>
 
                         @include('partials/language_select')
@@ -123,9 +123,16 @@
         </div>
     </div>
 
-    <main class="py-4">
+    <main class="py-4 h-75">
         @yield('content')
     </main>
+
+    <footer class="bg-light text-center text-lg-start fixed-bottom">
+        <div class="text-center p-3 shadow-lg">
+            Links:
+            <a class="text-dark" href="https://github.com/plencka/lifestyle-atlas">GitHub</a>
+        </div>
+    </footer>
 </div>
 </body>
 </html>
