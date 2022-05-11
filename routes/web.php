@@ -27,7 +27,7 @@ Route::get('/browse', function () {
     return view('browser.browser');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
