@@ -1,6 +1,7 @@
 <div class="card-main mb-5">
     <div class="card-header-main">{{ __('browser.browse') }}</div>
     <div class="card-body">
+        @include('browser.search_bar')
         @if (isset($plans))
             <div class="col-md-0">
                 @if (!$plans->isEmpty())
@@ -26,7 +27,7 @@
                                 </li>
                             </a>
                         @endforeach
-                        {{ $plans->links() }}
+                            {!! $plans->appends(Request::except('page'))->render() !!}
                     </ul>
                 @else
                     {{ __('browser.no_plans_found') }}
