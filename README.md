@@ -1,5 +1,5 @@
 # lifestyle-atlas
-TODO: An app that will help you improve your habits.
+An app that will help you improve your habits.
 
 ## Basic Application Setup
 To get started, run the following commands in the root directory of the cloned local repository:
